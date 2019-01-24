@@ -12,20 +12,20 @@ class App < Sinatra::Base
 
   post "/puppy" do
 
-    new_puppy = Puppy.new(params[:name], params[:breed], params[:age])
-    @name = new_puppy.name
-    @breed = new_puppy.breed
-    @age = new_puppy.age
+    @new_puppy = Puppy.new(params[:name], params[:breed], params[:age])
+    # @name = new_puppy.name
+    # @breed = new_puppy.breed
+    # @age = new_puppy.age
     erb :display_puppy
   end
 
-  get "/:name/:breed/:age" do
-    new_puppy = Puppy.new(params[:name], params[:breed], params[:age])
-    @name = new_puppy.name
-    @breed = new_puppy.breed
-    @age = new_puppy.age
-
-    erb :display_puppy
-  end
+  # get "/:name/:breed/:age" do
+  #   new_puppy = Puppy.new(params[:name], params[:breed], params[:age])
+  #   @name = new_puppy.name
+  #   @breed = new_puppy.breed
+  #   @age = new_puppy.age
+  #
+  #   erb :display_puppy
+  # end
 
 end #end of class
